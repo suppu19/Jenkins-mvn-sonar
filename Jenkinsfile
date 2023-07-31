@@ -33,9 +33,8 @@ pipeline{
        stage("nexus artifact") {
             steps{
                 script{
-                  def pom = readMavenPom file: 'pom.xml' 
-                    
-                    def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "nexus-repo-snapshot" : "nexus-repo-release"
+                  def mavenpom = readMavenPom file: 'pom.xml' 
+                  def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "nexus-repo-snapshot" : "nexus-repo-release"
                     
                     nexusArtifactUploader artifacts: [[artifactId: 'java-web-app', 
                                                         classifier: '', 
