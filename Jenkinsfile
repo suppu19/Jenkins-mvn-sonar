@@ -12,7 +12,7 @@ pipeline{
             sh "mvn clean pacage"
      } 
                 post {
-                    sucess{ 
+                    success{ 
                         archiveArtifacts artifacts: '**/*.jar'
 
                     }
