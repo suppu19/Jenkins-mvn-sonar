@@ -34,8 +34,8 @@ pipeline{
             steps{
                 script{
                     nexusArtifactUploader artifacts: [[artifactId: 'java-web-app', 
-                                                        classifier: '', f
-                                                        ile: 'target/.jar', 
+                                                        classifier: '', 
+                                                        file: 'target/.jar', 
                                                         type: 'jar']],
                                                         credentialsId: 'nexus-login', 
                                                         groupId: 'com.example', 
