@@ -9,7 +9,7 @@ pipeline{
     stages{
         stage("maven build"){
            steps{
-            sh "mvn clean pacage"
+            sh "mvn clean package"
      } 
                 post {
                     success{ 
