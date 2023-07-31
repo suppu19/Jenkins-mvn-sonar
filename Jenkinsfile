@@ -45,7 +45,7 @@ pipeline{
                                         type: "${pom.packaging}" ] ],
                                         credentialsId: "nexus-login", 
                                         groupId: "${pom.groupId}", 
-                                        nexusUrl: "13.127.218.104:8081", 
+                                        nexusUrl: "${env.nexus-ip}", 
                                         nexusVersion: "nexus3", 
                                         protocol: "http", 
                                         repository: "nexus-repo", 
