@@ -30,28 +30,28 @@ pipeline{
                 }  
             }
         }
-       stage("nexus artifact") {
-            steps{
-                script{
-                 def pom = readMavenPom file: 'pom.xml'
-                 //def nexus_url 
-                  //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "nexus-repo-snapshot" : "nexus-repo-release"
+       //stage("nexus artifact") {
+            // steps{
+            //     script{
+            //      def pom = readMavenPom file: 'pom.xml'
+            //      //def nexus_url 
+            //       //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "nexus-repo-snapshot" : "nexus-repo-release"
                     
-                    nexusArtifactUploader artifacts: [[artifactId: "${pom.artifactId}", //'java-web-app', 
-                                                        classifier: '', 
-                                                        file: "target/${pom.artifactId}-${pom.version}.jar",//'target/java-web-app-3.3.0-SNAPSHOT.jar', 
-                                                        type: "${pom.packaging}" ] //'jar'
-                                                        ],
-                                                        credentialsId: 'nexus-login', 
-                                                        groupId: "${pom.groupId}", //'com.example' 
-                                                        nexusUrl:   "13.127.218.104:8081", //"${env.nexus-ip}", 
-                                                        nexusVersion: 'nexus3', 
-                                                        protocol: 'http', 
-                                                        repository: 'nexus-repo', 
-                                                        version:"${pom.version}" //'3.3.0-SNAPSHOT'
-                }
-            }
-       }       
+            //         nexusArtifactUploader artifacts: [[artifactId: "${pom.artifactId}", //'java-web-app', 
+            //                                             classifier: '', 
+            //                                             file: "target/${pom.artifactId}-${pom.version}.jar",//'target/java-web-app-3.3.0-SNAPSHOT.jar', 
+            //                                             type: "${pom.packaging}" ] //'jar'
+            //                                             ],
+            //                                             credentialsId: 'nexus-login', 
+            //                                             groupId: "${pom.groupId}", //'com.example' 
+            //                                             nexusUrl:   "13.127.218.104:8081", //"${env.nexus-ip}", 
+            //                                             nexusVersion: 'nexus3', 
+            //                                             protocol: 'http', 
+            //                                             repository: 'nexus-repo', 
+            //                                             version:"${pom.version}" //'3.3.0-SNAPSHOT'
+            //     }
+            //}
+      // }       
             
     }
 }           
