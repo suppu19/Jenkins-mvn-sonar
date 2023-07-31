@@ -37,7 +37,7 @@ pipeline{
                     //def nexus_url 
                     //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "nexus-repo-snapshot" : "nexus-repo-release"
                    def  pom = readMavenPom  file: 'pom.xml'
-                    def nexus_url = 13.127.218.104:8081
+                    def nexus_url = "13.127.218.104:8081"
                     nexusArtifactUploader artifacts: 
                                         [[artifactId: "${pom.artifactId}", 
                                         classifier: '', 
