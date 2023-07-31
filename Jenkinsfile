@@ -33,13 +33,17 @@ pipeline{
        stage("nexus artifact") {
             steps{
                 script{
+                  def pom = readMavenPom file: 'pom.xml' 
+                    
+                    def nexusRepoName = Pom.version.endsWith("SNAPSHOT") ? "nexus-repo-snapshot" : "nexus-repo-release"
+                    
                     nexusArtifactUploader artifacts: [[artifactId: 'java-web-app', 
                                                         classifier: '', 
                                                         file: 'target/java-web-app-3.3.0-SNAPSHOT.jar', 
                                                         type: 'jar']],
                                                         credentialsId: 'nexus-login', 
                                                         groupId: 'com.example', 
-                                                        nexusUrl: '13.127.218.104:8081', 
+                                                        nexusUrl: 'nexus-ip', 
                                                         nexusVersion: 'nexus3', 
                                                         protocol: 'http', 
                                                         repository: 'nexus-repo', 
