@@ -44,7 +44,7 @@ pipeline{
                                                         ],
                                                         credentialsId: 'nexus-login', 
                                                         groupId: "${pom.groupId}", //'com.example' 
-                                                        nexusUrl:  "${env.nexus-ip}", 
+                                                        nexusUrl:   "13.127.218.104:8081", //"${env.nexus-ip}", 
                                                         nexusVersion: 'nexus3', 
                                                         protocol: 'http', 
                                                         repository: 'nexus-repo', 
