@@ -39,7 +39,7 @@ pipeline{
                     
                     nexusArtifactUploader artifacts: [[artifactId: "${pom.artifactId}", //'java-web-app', 
                                                         classifier: '', 
-                                                        file: "target/${pom.artifactId}-${pom.version}.jar"//'target/java-web-app-3.3.0-SNAPSHOT.jar', 
+                                                        file: "target/${pom.artifactId}-${pom.version}.jar",//'target/java-web-app-3.3.0-SNAPSHOT.jar', 
                                                         type: "${pom.packaging}" ] //'jar'
                                                         ],
                                                         credentialsId: 'nexus-login', 
