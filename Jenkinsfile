@@ -37,7 +37,7 @@ pipeline{
                  //def nexus_url 
                   //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "nexus-repo-snapshot" : "nexus-repo-release"
                     
-                    nexusArtifactUploader artifacts: [[artifactId: "${pom.artifactId}"//'java-web-app', 
+                    nexusArtifactUploader artifacts: [[artifactId: "${pom.artifactId}", //'java-web-app', 
                                                         classifier: '', 
                                                         file: "target/${pom.artifactId}-${pom.version}.jar"//'target/java-web-app-3.3.0-SNAPSHOT.jar', 
                                                         type: "${pom.packaging}" ] //'jar'
