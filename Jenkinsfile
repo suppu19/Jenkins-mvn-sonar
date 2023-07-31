@@ -39,10 +39,11 @@ pipeline{
                     nexusArtifactUploader artifacts: [[artifactId: 'java-web-app', 
                                                         classifier: '', 
                                                         file: 'target/java-web-app-3.3.0-SNAPSHOT.jar', 
-                                                        type: 'jar']],
+                                                        type: 'jar']
+                                                        ]
                                                         credentialsId: 'nexus-login', 
                                                         groupId: 'com.example', 
-                                                        nexusUrl: 'nexus-ip', 
+                                                        nexusUrl:  "${env.nexus-ip}", 
                                                         nexusVersion: 'nexus3', 
                                                         protocol: 'http', 
                                                         repository: 'nexus-repo', 
