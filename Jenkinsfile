@@ -30,7 +30,23 @@ pipeline{
                 }  
             }
         }
-               
+       stage("nexus artifact") {
+            steps{
+                script{
+                    nexusArtifactUploader artifacts: [[artifactId: 'java-web-app', 
+                                                        classifier: '', f
+                                                        ile: 'target/.jar', 
+                                                        type: 'jar']],
+                                                        credentialsId: 'nexus-login', 
+                                                        groupId: 'com.example', 
+                                                        nexusUrl: '13.127.218.104:8081', 
+                                                        nexusVersion: 'nexus3', 
+                                                        protocol: 'http', 
+                                                        repository: 'nexus-repo', 
+                                                        version: '3.3.0'
+                }
+            }
+       }       
             
     }
 }           
