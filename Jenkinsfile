@@ -36,7 +36,7 @@ pipeline{
                 script{
                     //def nexus_url 
                     //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "nexus-repo-snapshot" : "nexus-repo-release"
-                     pom = readMavenPom file: 'pom.xml'
+                    pom = readMavenPom  file: 'pom.xml'
                     
                     nexusArtifactUploader artifacts: 
                                         [[artifactId: "${pom.artifactId}", 
