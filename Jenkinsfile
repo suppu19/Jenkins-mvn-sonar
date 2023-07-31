@@ -40,7 +40,7 @@ pipeline{
                                                         classifier: '', 
                                                         file: 'target/java-web-app-3.3.0-SNAPSHOT.jar', 
                                                         type: 'jar']
-                                                        ]
+                                                        ],
                                                         credentialsId: 'nexus-login', 
                                                         groupId: 'com.example', 
                                                         nexusUrl:  "${env.nexus-ip}", 
