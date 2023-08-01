@@ -52,11 +52,19 @@ pipeline{
                                         version:"${pom.version}" //'3.3.0-SNAPSHOT'
                 }
             }
-      }       
+      } 
+        stage("Docker-build"){
+            steps{
+                script{
+                    sh "docker build -t suppu19/Jenkins-mvn-sonar:v${BUILD_NUMBER} ."
+                }
+            }
+
+        }      
             
     }
 }           
-
+        
 
            
         
