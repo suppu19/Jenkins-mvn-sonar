@@ -62,7 +62,7 @@ pipeline{
                     // withCredentials([string(credentialsId: 'dockerhub01', variable: 'dockerhub')]) {
                     //      sh 'docker login -u hari401 -p  ${dockerhub}'    
                     // }
-                    sh  'docker login -u hari401 -pHaripriya12@'
+                    sh  'docker login -u hari401 -pHaripriya123@'
                     sh 'docker push suppu19/jenkins-mvn-sonar:v${BUILD_NUMBER}'
 
                 }
