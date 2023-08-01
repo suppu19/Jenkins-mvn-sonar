@@ -56,7 +56,7 @@ pipeline{
         stage("Docker-build"){
             steps{
                 script{
-                    sh "docker build -t suppu19/Jenkins-mvn-sonar:v${BUILD_NUMBER} ."
+                    sh "docker build -t suppu19/jenkins-mvn-sonar:v${BUILD_NUMBER} ."
                 }
             }
 
