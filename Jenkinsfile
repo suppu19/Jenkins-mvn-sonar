@@ -57,12 +57,9 @@ pipeline{
             steps{
                 script{
                     sh 'docker build -t hari401/jenkins-mvn-sonar:v${BUILD_NUMBER} .'
-                    //withCredentials([string(credentialsId: 'DOCKERLOGIN', variable: 'dockerhub')]) {
-                    //withCredentials([usernameColonPassword(credentialsId: 'DOCKERLOGIN', variable: 'dockerhub')]) {
-                    // withCredentials([string(credentialsId: 'dockerhub01', variable: 'dockerhub')]) {
-                    //      sh 'docker login -u hari401 -p  ${dockerhub}'    
-                    // }
-                    sh  'docker login -u hari401 -pHaripriya123@'
+                    withCredentials([string(credentialsId: 'dockerhublogin', variable: 'dockerlogin')]) {
+                         sh  'docker login -u hari401 -p ${dockerlogin}'
+                    }
                     sh 'docker push hari401/jenkins-mvn-sonar:v${BUILD_NUMBER}'
 
                 }
