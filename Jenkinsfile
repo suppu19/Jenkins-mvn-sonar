@@ -81,7 +81,7 @@ pipeline{
                     noUploadOnFailure: false, 
                     selectedRegion: 'ap-south-1', 
                     showDirectlyInBrowser: false, 
-                    sourceFile: '/target/.jar', 
+                    sourceFile: '**/target/*.jar', 
                     storageClass: 'STANDARD', 
                     uploadFromSlave: false, 
                     useServerSideEncryption: false]],
