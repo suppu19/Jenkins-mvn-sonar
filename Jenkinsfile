@@ -90,13 +90,13 @@ pipeline{
                     userMetadata: []
                 }
             }
-        } 
+         
             post {
                 always {
                     slackSend channel: '#jenkins-intigration', message: "build fail ${JOB_NAME}-${BUILD_NUMBER}"
                     }
-        } 
-            
+            } 
+        }    
     }
 }           
         
