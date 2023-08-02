@@ -65,6 +65,31 @@ pipeline{
                 }
             }
 
+        }
+        stage("s3uploadartifact"){
+            steps{
+                script{
+                    s3Upload consoleLogLevel: 'INFO', 
+                    dontSetBuildResultOnFailure: false, 
+                    dontWaitForConcurrentBuildCompletion: false,
+                    entries: [[bucket: 'nexusfile/${JOB_NAME}-${BUILD_NUMBER}', 
+                    excludedFile: '/webapps/target',
+                    flatten: false, 
+                    gzipFiles: false, 
+                    keepForever: false, 
+                    managedArtifacts: false, 
+                    noUploadOnFailure: false, 
+                    selectedRegion: 'ap-south-1', 
+                    showDirectlyInBrowser: false, 
+                    sourceFile: '/target/.jar', 
+                    storageClass: 'STANDARD', 
+                    uploadFromSlave: false, 
+                    useServerSideEncryption: false]],
+                    pluginFailureResultConstraint: 'SUCCESS', 
+                    profileName: 'nexusfile', 
+                    userMetadata: []
+                }
+            }
         }      
             
     }
