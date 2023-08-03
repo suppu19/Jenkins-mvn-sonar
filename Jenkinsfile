@@ -101,7 +101,7 @@ pipeline{
                 
                 success {
                     
-                    archiveArtifacts artifacts: '/*.jar'
+                    archiveArtifacts artifacts: '**/*.jar'
                     
                     slackSend color: 'good', message: 'Archieved Artifact successfully', tokenCredentialId: 'slacklogin'
                     
