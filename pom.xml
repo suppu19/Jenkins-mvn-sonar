@@ -6,7 +6,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>java-web-app</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <version>3.3.0-SNAPSHOT</version>
 
     <properties>
